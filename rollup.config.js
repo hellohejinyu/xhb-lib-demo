@@ -1,6 +1,6 @@
 import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
-// import babel from '@rollup/plugin-babel';
+import image from '@rollup/plugin-image';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 export default {
@@ -10,9 +10,15 @@ export default {
     format: 'cjs',
   },
   plugins: [
-    typescript(),
+    image(),
+    typescript({
+      lib: ['DOM', 'ES2015'],
+      target: 'es5',
+      jsx: 'react',
+      allowSyntheticDefaultImports: true,
+    }),
     commonjs(),
     nodeResolve(),
-    // babel({ babelHelpers: 'bundled' }),
-  ]
+  ],
+  external: ['react', 'react-dom',],
 };

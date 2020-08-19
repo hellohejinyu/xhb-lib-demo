@@ -1,10 +1,10 @@
 {
   "name": "xhb-lib-demo",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "build": "rm -rf lib && tsc --declarationDir lib --declaration true --emitDeclarationOnly && rollup -c"
+    "build": "rm -rf lib && tsc --project ts.config.json && rollup -c"
   },
   "keywords": [],
   "author": "",
@@ -17,11 +17,9 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/preset-react": "^7.10.4",
     "@rollup/plugin-babel": "^5.2.0",
     "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-image": "^2.0.5",
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-typescript": "^5.0.2",
     "rollup": "^2.26.3",
